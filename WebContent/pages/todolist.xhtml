@@ -10,8 +10,7 @@
 		<ui:composition template="../templates/head_todolist.xhtml">			
 			<ui:define name="content">					
 				<div class="container">
-					<div class="row">
-					
+					<div class="row">			
 						<c:if test="#{ToDoMBean.message ne ''}">
 							<div class="alert alert-success alert-dismissible"  role="alert">
 	  							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -28,7 +27,7 @@
 						<a class="btn btn-primary" href="http://localhost:8080/MyToDoList/pages/addToDo.xhtml">
 							<span class="glyphicon glyphicon-plus"></span>
 						</a>
-						<a class="btn btn-primary" href="http://localhost:8080/MyToDoList/pages/index.xhtml">
+						<a class="btn btn-primary left" href="http://localhost:8080/MyToDoList/pages/index.xhtml">
 							<span class="glyphicon glyphicon-arrow-left" />
 						</a>
 					</div>
@@ -44,15 +43,13 @@
       								<f:ajax listener="#{ToDoMBean.updateStatusCheckbox()}" render="@form" />			
       							</h:selectBooleanCheckbox>
    							</h:form> 
-						</h:column>
-    					
+						</h:column>					
     					<h:column headerClass="column2">
     						<f:facet name="header">
 								<h:outputText value="To Do" />
 							</f:facet>
 							<h:outputText value="#{todo.text}" />
-						</h:column>
-							
+						</h:column>						
 						<h:column headerClass="column3">	
 							<f:facet  name="header">
 								<h:outputText value="Actions" />
@@ -68,12 +65,10 @@
 									<span class="glyphicon glyphicon-remove"></span> 
 								</h:commandLink>
 							</h:form>																 			      										
-						</h:column>	
-																					
+						</h:column>																						
 					</h:dataTable>
 					</div>
-				</div>
-				
+				</div>		
 			</ui:define>
 		</ui:composition>		 		
 	</h:body>
