@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+
+.dataTableStyle{margin-top: 2%;}
+
+.btn {display : inline !important;}
+
+.title{margin-top: 5%;}
+
+.column1 { width: 10% }
+.column2 { width: 75% }
+.column3 { width: 15% }
+
+.form-checkbox{
+	margin-left: 40%;
+}
+
+td {
+	padding: 5px !important;
+	
+}
+
+.pencil{padding: 0px 0px;}
+
+.btn-update{ margin-left: 40px; }
+
+.btn-delete{ margin-left: 4px; }
+
+
+

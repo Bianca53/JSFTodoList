@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>            
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  	<link rel="stylesheet"  href="css/form.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</h:head>
+<h:body>
+	<ui:composition template="../templates/form.xhtml">			
+		<ui:define name="title">Update ToDoList</ui:define>
+		<ui:define name="content">
+			<div class="container">			
+				<div class="row">
+      				<div class="col-md-5 content">
+        				<div class="panel panel-default">
+          					<div class="panel-heading">
+								<h3 class="panel-title">Update To Do List</h3>
+							</div>
+							<div class="panel-body">
+  								<h:form class="form-horizontal" role="form">
+   									<div class="form-group">
+      									<h:outputLabel class="col-sm-3 control-label" for="input_title" value="Title:"></h:outputLabel>
+										<div class="col-sm-9">
+											<h:inputText  id="input_title" validatorMessage="*this field must to be 3 to 20 characters" requiredMessage="*this field can not to be null!"   class="form-control" type="text" value="#{ToDoListMBean.title}" required="true" >
+												<f:validateLength minimum="3" maximum="20" />
+											</h:inputText>
+											<h:message for="input_title" style="color:red" />	
+										</div>	
+    								</div>
+    								<div class="form-group">
+                						<div class="col-sm-offset-2 col-sm-10">
+    										<h:commandButton class="btn btn-primary" value="Save" action="#{ToDoListMBean.update()}"/>
+    										<a class="btn btn-default" href="http://localhost:8080/MyToDoList/pages/index.xhtml">
+												Cancel
+											</a>
+										</div>
+									</div>
+  								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+	
+</h:body>
+</html>

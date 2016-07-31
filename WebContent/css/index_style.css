@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+
+.column1 {	
+	 width:87%;
+}
+
+.column2 {
+	width:15%;	
+}
+
+.dataTableStyle {
+	vertical-align: middle !important;
+	margin-top: 2%;
+}
+
+img {	
+	margin-top: 3%;
+}
+
+td {
+	padding: 5px !important;
+	
+}
+
+.pencil{	
+	padding: 0px 0px;
+}
+
+.btn-update{
+	margin-left: 30px;
+}
+
+.btn-delete{
+	margin-left: 3px;
+}
+
+.btn{
+	display : inline !important;
+}
+
+
+
+

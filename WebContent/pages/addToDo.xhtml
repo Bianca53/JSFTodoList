@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+
+<h:body>
+	<ui:composition template="../templates/form.xhtml">			
+		<ui:define name="title">Add To Do</ui:define>
+		<ui:define name="content">		
+			<div class="container">
+    			<div class="row">
+      				<div class="col-md-5 content">
+        				<div class="panel panel-default">
+          					<div class="panel-heading">
+            					<h3 class="panel-title">New To Do</h3>
+          					</div>
+          					<div class="panel-body">
+            					<h:form class="form-horizontal" role="form">
+              						<div class="form-group">
+                						<h:outputLabel value="Text" for="input_text" class="col-sm-3 control-label" />              
+                						<div class="col-sm-9">
+                  							<h:inputText  id="input_text" value="#{ToDoMBean.toDo.text}" validatorMessage="*this field must to be 3 to 30 characters" requiredMessage="*this field can not to be null!"   class="form-control" type="text"  required="true" placeholder="choose one title">
+                    							<f:validateLength minimum="3" maximum="30" />
+                  							</h:inputText>
+                 							<h:message for="input_text" style="color:red" /> 
+                						</div>
+              						</div>
+              
+             						<div class="form-group">
+                						<div class="col-sm-offset-2 col-sm-10">
+                 	 						<h:commandButton class="btn btn-primary" value="Save" action="#{ToDoMBean.insert()}"/>
+                  							<a class="btn btn-default" href="http://localhost:8080/MyToDoList/pages/todolist.xhtml">
+                    							Cancel
+                   							</a>  
+                						</div>
+              						</div>
+            					</h:form>
+          					</div>
+        				</div>
+      				</div>
+				</div>
+  			</div>
+  		</ui:define>
+  	</ui:composition>
+</h:body>
+</html>
